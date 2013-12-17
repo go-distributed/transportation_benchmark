@@ -16,6 +16,7 @@ func BenchmarkHTTP(b *testing.B) {
 		go startHTTPServer()
 	}
 
+	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		for i := 0; i < 10; i++ {
 			go httpClient(done)

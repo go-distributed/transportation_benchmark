@@ -15,6 +15,7 @@ func BenchmarkTCP(b *testing.B) {
 		go startServer()
 	}
 
+	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		for i := 0; i < 10; i++ {
 			go client(done)
